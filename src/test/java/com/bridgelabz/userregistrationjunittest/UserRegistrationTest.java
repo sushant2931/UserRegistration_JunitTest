@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class UserRegistrationTest {
     UserRegistration userRegistration;
+
     @Before
     public void before() {
         userRegistration = new UserRegistration();
@@ -21,5 +22,19 @@ public class UserRegistrationTest {
     public void givenFirstName_WhenNotProper_ShouldReturnFlase() {
         boolean result = userRegistration.firstName("prash");
         Assert.assertEquals(false, result);
+    }
+
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        boolean result = userRegistration.lastName("Navin");
+        Assert.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenLastName_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userRegistration.lastName("navin");
+        Assert.assertEquals(false, result);
+
+
     }
 }
