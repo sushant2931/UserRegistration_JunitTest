@@ -16,5 +16,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
+    public boolean email(String email) {
+        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 
 }
