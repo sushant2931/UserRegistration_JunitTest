@@ -14,25 +14,25 @@ public class UserRegistrationTest {
 
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.firstName("Sushant");
+        boolean result = userRegistration.firstName("Prash");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenFirstName_WhenNotProper_ShouldReturnFlase() {
-        boolean result = userRegistration.firstName("Susha");
+        boolean result = userRegistration.firstName("prash");
         Assert.assertEquals(false, result);
     }
 
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.lastName("Lad");
+        boolean result = userRegistration.lastName("Navin");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenLastName_WhenNotProper_ShouldReturnFalse() {
-        boolean result = userRegistration.lastName("lad");
+        boolean result = userRegistration.lastName("navin");
         Assert.assertEquals(false, result);
 
     }
@@ -51,14 +51,25 @@ public class UserRegistrationTest {
 
     @Test
     public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistration.phoneNumber("91 8830602356");
+        boolean result = userRegistration.phoneNumber("91 9876543210");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenPhoneNumber_WhenNotProper_ShouldReturnFlase() {
-        boolean result = userRegistration.phoneNumber("+91 8830602356");
+        boolean result = userRegistration.phoneNumber("+91 9876543210");
         Assert.assertEquals(false, result);
     }
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        boolean result = userRegistration.password("password@123");
+        Assert.assertEquals(true, result);
+    }
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userRegistration.password("psw@");
+        Assert.assertEquals(false, result);
+    }
+
 
 }
